@@ -21,6 +21,9 @@
     "wa-sticker-formatter": "^4.3.2"
   },
   "overrides": {
-    "sharp": "github:deveni0/sharp-tmx"
+    "sharp": "github:deveni0/sharp-tmx",
+    "*": {
+      "sharp": "github:deveni0/sharp-tmx"
+    }
   }
 }
