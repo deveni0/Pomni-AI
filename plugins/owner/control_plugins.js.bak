@@ -51,7 +51,7 @@ const handler = async (m, { conn, bot, command }) => {
     }
     
     if (!m.quoted) return m.reply('✦ *الرد على الكود اولا* ✦');
-    const content = m.quoted.text || m.quoted.msg;
+    const content = m.quoted.text || m.quoted.body;
     if (!content) return m.reply('✧ الكود غير موجود ✧');
     
     const parts = target.split('/');
