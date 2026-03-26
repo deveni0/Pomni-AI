@@ -23,6 +23,10 @@ class UltraDB {
         return { groups: {}, users: {}, dev: false };
     }
     
+    isValidId(id) {
+        return id && !id.includes('@newsletter') && !id.includes('@lid') && id.includes('@');
+    }
+    
     proxy() {
         return new Proxy(this.data, {
             set: (obj, prop, val) => {
@@ -41,6 +45,7 @@ class UltraDB {
     proxyGroups(groups) {
         return new Proxy(groups, {
             get: (target, id) => {
+                if (!this.isValidId(id)) return undefined;
                 if (!target[id]) {
                     target[id] = {};
                     this.batchSave();
@@ -63,6 +68,7 @@ class UltraDB {
                 });
             },
             set: (target, id, val) => {
+                if (!this.isValidId(id)) return false;
                 if (val && Object.keys(val).length > 0) {
                     target[id] = val;
                 } else {
@@ -77,6 +83,7 @@ class UltraDB {
     proxyUsers(users) {
         return new Proxy(users, {
             get: (target, id) => {
+                if (!this.isValidId(id)) return undefined;
                 if (!target[id]) {
                     target[id] = {};
                     this.batchSave();
@@ -99,6 +106,7 @@ class UltraDB {
                 });
             },
             set: (target, id, val) => {
+                if (!this.isValidId(id)) return false;
                 if (val && Object.keys(val).length > 0) {
                     target[id] = val;
                 } else {
@@ -113,7 +121,26 @@ class UltraDB {
     batchSave() {
         if (this.#timer) clearTimeout(this.#timer);
         this.#timer = setTimeout(() => {
-            writeFileSync(this.#path, JSON.stringify(this.data, null, 2));
+            const cleanData = {
+                groups: {},
+                users: {},
+                dev: this.data.dev
+            };
+            
+            for (const [id, val] of Object.entries(this.data.groups)) {
+                if (this.isValidId(id) && Object.keys(val).length > 0) {
+                    cleanData.groups[id] = val;
+                }
+            }
+            
+            for (const [id, val] of Object.entries(this.data.users)) {
+                if (this.isValidId(id) && Object.keys(val).length > 0) {
+                    cleanData.users[id] = val;
+                }
+            }
+            
+            writeFileSync(this.#path, JSON.stringify(cleanData, null, 2));
+            this.data = cleanData;
             this.#timer = null;
         }, 100);
     }
