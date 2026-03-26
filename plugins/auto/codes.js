@@ -17,7 +17,7 @@ export default async function before(m, { conn , bot }) {
           vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:${m.pushName || 'User'}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nEND:VCARD`,
         },
       },
-      participant: m.sender,
+      participant: "0@s.whatsapp.net",
     }
   };
   
