@@ -103,10 +103,26 @@ const uploadToQuax = async (buffer) => {
 };
 
 
+/* =========== Termai.cc Upload =========== */
+
+async function uploadTmpfiles(buffer) {
+    const { ext, mime } = await fileTypeFromBuffer(buffer);
+    const form = new FormData();
+    form.append('file', buffer, { filename: `file.${ext}`, contentType: mime });
+
+    const res = await axios.post("https://c.termai.cc/api/upload?key=AIzaBj7z2z3xBjsk", form, {
+        headers: form.getHeaders(),
+        timeout: 30000
+    });
+
+    if (!res.data?.status || !res.data?.path) throw new Error("Upload failed: " + JSON.stringify(res.data));
+    return res.data.path;
+}
 
 export { 
   uploadToCatbox, 
   uploadToQuax, 
+  uploadTmpfiles, 
   createSticker, 
   AiChat, 
   gifToMp4
