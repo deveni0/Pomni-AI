@@ -13,7 +13,10 @@ const CATEGORIES = [
     [12, 'الـذكـاء الاصـطـنـاعـي', 'ai', '🤖'],
     [13, 'الـبـوتـات الـفـرعـي', 'sub', '♥️'],
     [14, 'مـعـلومـات الـبـوت', 'info', '🗃️'],
-    [15, 'أخــرى', 'other', '🌹']
+    [15, 'الـالــقــاب', 'nicknames', '🫯'],
+    [16, 'الـلـوجـوهــات', 'logos', '🎡'],
+    [17, 'تـغـيـر الاصـوات', 'voices', '📢'],
+    [18, 'أخــرى', 'other', '🌹']
 ];
 
 const getCat = n => CATEGORIES.find(c => c[0] === n);
@@ -33,7 +36,7 @@ const context = (jid, img) => ({
         serverMessageId: 0
     },
     externalAdReply: {
-        title: "𝐏𝐎𝐌𝐍𝐈-𝐀𝐈 🎪 | 𝐁𝐨𝐭 𝐢𝐬 𝐛𝐮𝐢𝐥𝐭 𝐨𝐧 𝐭𝐡𝐞 𝐖𝐒/𝐕𝐈𝐈 𝐟𝐫𝐚𝐦𝐞𝐰𝐨𝐫𝐤",
+        title: "👑┊𝕾𝖍𝖆𝖉𝖔𝖜┊👑 | 𝐁𝐨𝐭 𝐢𝐬 𝐛𝐮𝐢𝐥𝐭 𝐨𝐧 𝐭𝐡𝐞 𝐖𝐒/𝐕𝐈𝐈 𝐟𝐫𝐚𝐦𝐞𝐰𝐨𝐫𝐤",
         body: "𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚋𝚘𝚝 𝚝𝚑𝚊𝚝 𝚒𝚜 𝚎𝚊𝚜𝚢 𝚝𝚘 𝚖𝚘𝚍𝚒𝚏𝚢 𝚊𝚗𝚍 𝚟𝚎𝚛𝚢 𝚏𝚊𝚜𝚝",
         thumbnailUrl: img,
         sourceUrl: '',
@@ -55,7 +58,7 @@ const uptimeFormatted = `${String(hours).padStart(2, '0')}:${String(minutes).pad
     
     if (!selected && !args[0]) {
         const sections = [{
-            title: "🌳 ~ الاقـسـام ~ 🪾",
+            title: "اضغط هنا",
             rows: CATEGORIES.map(c => ({
                 title: `${c[0]} ~ ${c[1]} ${c[3]}`,
                 description: `اضغط لعرض أوامر قسم ${c[1]}`,
@@ -87,7 +90,7 @@ const uptimeFormatted = `${String(hours).padStart(2, '0')}:${String(minutes).pad
             mentions: [m.sender],
             newsletter: {
                 name: '𝐕𝐈𝐈7 ~ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🕷️',
-                jid: '120363225356834044@newsletter'
+                jid: '120363426422109681@newsletter'
             }
         }, global.reply_status);
         return;
