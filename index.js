@@ -42,8 +42,8 @@ config.info = {
     channel: "https://whatsapp.com/channel/0029VaQim2bAu3aPsRVaDq3v"
   },
   copyright: { 
-    pack: 'ڤـ ـ VA ـ ـا', 
-    author: 'VA'
+    pack: 'Aizen👑', 
+    author: 'Aizen 👑'
   },
   images: [
     "",
