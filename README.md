@@ -1,4 +1,4 @@
-# ✨ Pomni AI- WhatsApp Bot
+# ✨ whiskey_AI- WhatsApp Bot
 
 <div align="center">
   <img src="https://i.pinimg.com/originals/e2/21/20/e221203f319df949ee65585a657501a2.jpg" alt="IMAGE" width="500"/>

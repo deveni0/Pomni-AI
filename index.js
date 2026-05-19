@@ -10,19 +10,19 @@ const client = new Client({
   fromMe: false, 
   owners: [
   // Owner 1
-    { name: "VA", lid: "247579682029763@lid", jid: "972569311531@s.whatsapp.net" },
+    { name: "⃠✦⃟ وٌيـًٍّ̨̥ڛـًٌٍّ̨̥ڰﻲ // 𝑾𝒉𝒊𝒔𝒌𝒆𝒚​​​​​​​​​​​​​​ ⃠✦⃟", lid: "201141004467@lid", jid: "+84767389955@s.whatsapp.net" },
   // Owner 2
-    { name: "emam", lid: "221307316789354@lid", jid: "201144480436@s.whatsapp.net" },
+    { name: "⃠✦⃟ ☬Maro☬ ⃠✦⃟", lid: "20 15 53102408@lid", jid: "201068254334@s.whatsapp.net" },
   // Owner 3
-    { name: "Sukuna", jid: "201033024135@s.whatsapp.net", lid: "50414477168824@lid" },
+    { name: "ًآوًُسًــــــــكَآر", jid: "201141346373@s.whatsapp.net", lid: "201050993985@lid" },
   // Owner 4 
-   { name: "عمورتي", jid: "201050079089@s.whatsapp.net", lid: "51664513925368@lid" }
+   { name: "Whiskey.Developer2", jid: "201159803557@lid" }
   ],
   settings: { noWelcome: false },
   commandsPath: './plugins'
 });
 
-client.onGroupEvent(group);
+client.WhiskeyGroup (group);
 client.onCommandAccess(access);
 
 /* =========== Database ========== */
@@ -33,17 +33,24 @@ if (!global.db) {
 /* =========== Config ========== */
 const { config } = client;
 config.info = { 
-  nameBot: "♡ 𝙋𝙊𝙈𝙉𝙄 🎪 〈", 
-  nameChannel: "𝐕𝐈𝐈7 ~ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🕷️", 
-  idChannel: "120363225356834044@newsletter",
+  nameBot: "♡ whiskey 🎪 〈", 
+  nameChannel: "Developer Channel Whiskey  ~ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🕷️", 
+  idChannel: "https://whatsapp.com/channel/0029VbCvb568fewqFvpAoh2t",
   urls: {
-    repo: "https://github.com/deveni0/Pomni-AI",
-    api: "https://emam-api.web.id",
-    channel: "https://whatsapp.com/channel/0029VaQim2bAu3aPsRVaDq3v"
+    repo: "https://chat.whatsapp.com/LJzJRzjdMWyBXkz2sBSJbh",
+  urls: {
+    repo,
+  urls{
+    repo,
+  urls
+  urls: {
+    repo: "httpsni-AI",
+    api: "https://whiskey-api.web.id",
+    channel: "https://whatsapp.com/channel/0029VbCvb568fewqFvpAoh2t"
   },
   copyright: { 
-    pack: 'ڤـ ـ VA ـ ـا', 
-    author: 'VA'
+    pack: 'Whiskey', 
+    author: 'whiskey'
   },
   images: [
     "https://i.pinimg.com/originals/11/26/97/11269786cdb625c60213212aa66273a9.png",
