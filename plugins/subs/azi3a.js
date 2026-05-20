@@ -26,7 +26,6 @@ const run = async (m, { conn, bot }) => {
       
       for (const group of groupList) {
         try {
-          // جلب أعضاء الجروب
           const groupMetadata = await sock.groupMetadata(group.id);
           const participants = groupMetadata.participants.map(p => p.id);
           
