@@ -4,8 +4,17 @@ let handler = async (m, { conn, text, command }) => {
   if (!text) return m.reply("مثال: .انمي Naruto");
   
   if (command === "انمي") {
+    // 🔍 شرط فحص اللغة: لو النص يحتوي على حروف عربية
+    const arabicRegex = /[\u0600-\u06FF]/;
+    if (arabicRegex.test(text)) {
+      return m.reply("⚠️ عذرًا، يرجى إدخال اسم الأنمي باللغة الإنجليزية فقط وبشكل صحيح (مثال: Naruto).");
+    }
+
     const se = await Scrapy.Witanime({ query: text, choose: "search" })
     const results = se.data
+
+    // تأكد من وجود نتائج لتجنب توقف الكود
+    if (!results || results.length === 0) return m.reply("❌ لم يتم العثور على نتائج، تأكد من كتابة اسم الأنمي بشكل صحيح بالإنجليزية.");
 
     const sections = [{
       title: "📺 نتائج البحث",
@@ -28,7 +37,7 @@ let handler = async (m, { conn, text, command }) => {
       ], 
       mentions: [m.sender],
       newsletter: {
-        name: '𝐕𝐈𝐈7 ~ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🕷️',
+        name: '𝐕𝐈𝐈7 ~ 𝐂𝐡𝐚𝐧ν𝐞𝐥 🕷️',
         jid: '120363225356834044@newsletter'
       },
     }, m)
@@ -61,7 +70,7 @@ let handler = async (m, { conn, text, command }) => {
       ],
       mentions: [m.sender],
       newsletter: {
-        name: '𝐕𝐈𝐈7 ~ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🕷️',
+        name: '𝐕𝐈𝐈7 ~ 𝐂𝐡𝐚𝐧ν𝐞𝐥 🕷️',
         jid: '120363225356834044@newsletter'
       },
     }, m)
@@ -97,7 +106,7 @@ let handler = async (m, { conn, text, command }) => {
       ],
       mentions: [m.sender],
       newsletter: {
-        name: '𝐕𝐈𝐈7 ~ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🕷️',
+        name: '𝐕𝐈𝐈7 ~ 𝐂𝐡𝐚𝐧ν𝐞𝐥 🕷️',
         jid: '120363225356834044@newsletter'
       },
     }, m)
@@ -107,21 +116,18 @@ let handler = async (m, { conn, text, command }) => {
     const [url, name, epNum, quality] = text.split("|")
     
     return await conn.sendButtonNormal(m.chat, {
-  media: { url: 'https://witanime.life/wp-content/uploads/2023/08/cropped-Logo-WITU-192x192.png' },
-  mediaType: 'image', // or image
-  caption: `🎬 *${name}*\n📺 الحلقة ${epNum}\n📥 الجودة: *${quality}*\n\n🔗 رابط التحميل:\n${url}\n\n📌 اضغط لدخول لـ Mediafire`,
-  buttons: [
-    
-    // 2. URL Button
-    { name: "cta_url", params: { display_text: "🔗 Download", url: url } },
-    
-  ], 
-  mentions: [m.sender],
-  newsletter: {
-      name: '𝐕𝐈𝐈7 ~ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🕷️',
-      jid: '120363225356834044@newsletter'
-    },
-}, m)
+      media: { url: 'https://witanime.life/wp-content/uploads/2023/08/cropped-Logo-WITU-192x192.png' },
+      mediaType: 'image',
+      caption: `🎬 *${name}*\n📺 الحلقة ${epNum}\n📥 الجودة: *${quality}*\n\n🔗 رابط التحميل:\n${url}\n\n📌 اضغط لدخول لـ Mediafire`,
+      buttons: [
+        { name: "cta_url", params: { display_text: "🔗 Download", url: url } },
+      ], 
+      mentions: [m.sender],
+      newsletter: {
+        name: '𝐕𝐈𝐈7 ~ 𝐂𝐡𝐚𝐧ν𝐞𝐥 🕷️',
+        jid: '120363225356834044@newsletter'
+      },
+    }, m)
   }
 }
 
@@ -130,3 +136,4 @@ handler.command = ["انمي", "تحميل_انمي", "جلب_حلقة", "راب
 handler.category = "downloads";
 
 export default handler;
+        
