@@ -5,21 +5,15 @@ import sub from './sub.js';
 
 /* =========== Client ========== */
 const client = new Client({
-  phoneNumber: '20123456789', // Bot number
+  phoneNumber: '212784776925', // رقم البوت الخاص بك
   prefix: [".", "/", "!"],
   fromMe: false, 
   owners: [
-  // Owner 1
-    { name: "VA", lid: "247579682029763@lid", jid: "972569311531@s.whatsapp.net" },
-  // Owner 2
-    { name: "emam", lid: "221307316789354@lid", jid: "201144480436@s.whatsapp.net" },
-  // Owner 3
-    { name: "Sukuna", jid: "201033024135@s.whatsapp.net", lid: "50414477168824@lid" },
-  // Owner 4 
-   { name: "عمورتي", jid: "201050079089@s.whatsapp.net", lid: "51664513925368@lid" }
+    // تم استبدال المطورين برقمك واسمك لحماية صلاحيات المالك
+    { name: "KAKACHI", jid: "212784776925@s.whatsapp.net" }
   ],
   settings: { noWelcome: false },
-  commandsPath: './plugins'
+  commandsPath: './plugins' // سيبحث البوت عن مجلد الأوامر بهذا الاسم
 });
 
 client.onGroupEvent(group);
@@ -33,17 +27,17 @@ if (!global.db) {
 /* =========== Config ========== */
 const { config } = client;
 config.info = { 
-  nameBot: "♡ 𝙋𝙊𝙈𝙉𝙄 🎪 〈", 
-  nameChannel: "𝐕𝐈𝐈7 ~ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🕷️", 
-  idChannel: "120363225356834044@newsletter",
+  nameBot: "🥷 𝙆𝘼𝙆𝘼𝘾𝙃𝙄 𝘽𝙊𝙏 ⚡", // اسم البوت الجديد
+  nameChannel: "", 
+  idChannel: "", // تم إزالة معرف القناة القديم لعدم إزعاجك
   urls: {
     repo: "https://github.com/deveni0/Pomni-AI",
     api: "https://emam-api.web.id",
-    channel: "https://whatsapp.com/channel/0029VaQim2bAu3aPsRVaDq3v"
+    channel: "" // تم إزالة رابط القناة القديم
   },
   copyright: { 
-    pack: 'ڤـ ـ VA ـ ـا', 
-    author: 'VA'
+    pack: '𝙆𝘼𝙆𝘼𝘾𝙃𝙄', // حقوق الملصقات باسمك
+    author: '𝙆𝘼𝙆𝘼𝘾𝙃𝙄'
   },
   images: [
     "https://i.pinimg.com/originals/11/26/97/11269786cdb625c60213212aa66273a9.png",
@@ -82,5 +76,4 @@ setInterval(() => {
         process.exit(1) 
     }
 }, 300_000) 
-
 */
