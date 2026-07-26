@@ -1,11 +1,11 @@
-import { Client } from 'meowsab';
+٧import { Client } from 'meowsab';
 import { group, access } from "./system/control.js";
 import UltraDB from "./system/UltraDB.js";
 import sub from './sub.js';
 
 /* =========== Client ========== */
 const client = new Client({
-  phoneNumber: '20123456789', // Bot number
+  phoneNumber: '38508844', // Bot number
   prefix: [".", "/", "!"],
   fromMe: false, 
   owners: [
@@ -14,7 +14,7 @@ const client = new Client({
   // Owner 2
     { name: "emam", lid: "221307316789354@lid", jid: "201144480436@s.whatsapp.net" },
   // Owner 3
-    { name: "Sukuna", jid: "201033024135@s.whatsapp.net", lid: "50414477168824@lid" },
+    { name: "Sukuna", jid: "42594277@s.whatsapp.net", lid: "50414477168824@lid" },
   // Owner 4 
    { name: "عمورتي", jid: "201050079089@s.whatsapp.net", lid: "51664513925368@lid" }
   ],
